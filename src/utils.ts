@@ -9,7 +9,6 @@ export async function generateIcon(name: string, url: string) {
     try {
         const res = await Fetch(url);
         const icon_url = new URL(new URL(new DOMParser().parseFromString(res, "text/html").head.querySelector("link[rel$='icon']")?.getAttribute("href") as string).pathname, new URL(url).origin).href;
-        console.log(await fetch(icon_url));
         return icon_url;
     } catch (err) {
         console.error(err);
