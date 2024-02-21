@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  @apply h-screen w-full bg-py text-cl;
+}
+
+body>main {
+  @apply min-h-screen;
+}
+
+*[data-disabled="true"] {
+  @apply cursor-not-allowed opacity-30 pointer-events-none;
+}
+
+*[data-loading="true"] {
+  @apply relative;
+}
+
+*[data-loading="true"]::before,
+*[data-loading="true"]::after {
+  @apply content-[''] absolute;
+}
+
+*[data-loading="true"]::before {
+  @apply inset-0 bg-sy rounded-[inherit];
+}
+
+*[data-loading="true"]::after {
+  @apply size-3.5 border-2 border-transparent border-b-bd top-[50%] left-[50%] rounded-full animate-spin;
+  translate: -50% -50%;
+
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px hsl(var(--py-hsl)) inset !important;
+}
+
+
+*::-webkit-scrollbar {
+  @apply size-0;
+}
+
+
+@layer utilities {
+  .pointer {
+    cursor: pointer;
+  }
+
+  .btn {
+    @apply bg-bd py-1.5 px-3.5 text-white rounded-lg text-sm hover:bg-bd-600 active:scale-95 transition-all pointer;
+  }
+
+  .btn-xs {
+    @apply py-0.5 px-2 text-xs;
+  }
+
+  .btn-xl {
+    @apply py-2 px-4 text-lg;
+  }
+
+  .btn-sy {
+    @apply bg-sy text-bd hover:text-white;
+  }
+
+  .btn-icon {
+    @apply rounded-full py-1 px-1.5 hover:bg-bd/20 bg-cl/10 backdrop-blur-sm active:scale-100 transition-all scale-110 pointer active:border-cl/10 border-transparent border-[.1px];
+  }
+}
+
+@layer components {
+  .animate-spread-border {
+    animation: spread-border 300ms;
+  }
+
+  @layer components {
+    @keyframes spread-border {
+      0% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+
+    }
+  }
+
+  .url-popup:hover::before {
+    @apply content-[attr(data-url)] fixed bottom-2 left-[50%] text-[10px] text-bd/60 px-3 py-1 bg-bd/5 rounded-xl backdrop-blur border border-bd/10 text-nowrap max-w-[97%] text-ellipsis overflow-hidden animate-bounceInUp;
+    translate: -50% 0;
+    animation-duration: 500ms;
+  }
+}

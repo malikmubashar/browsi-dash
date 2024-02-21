@@ -15,6 +15,16 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailfly')({
+      palette: {
+        Modes: ['light', 'dark'],
+        py: ["#fff", "#000"],
+        sy: ["#e2eaff"],
+        bd: ["#235fe6"],
+        cl: ["#000c26", "#f7f7f7"],
+      }
+    })
+  ],
 };
 export default config;
