@@ -18,11 +18,10 @@ const config: Config = {
   plugins: [
     require('tailfly')({
       palette: {
-        Modes: ['light', 'dark'],
-        py: ["#fff", "#000"],
+        py: ["#fff"],
         sy: ["#e2eaff"],
         bd: ["#235fe6"],
-        cl: ["#000c26", "#f7f7f7"],
+        cl: ["#000c26"],
       }
     })
   ],

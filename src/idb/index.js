@@ -1,17 +1,17 @@
 "use client";
-// import { ShortcutSchema } from "@/schema";
+
+const currentVersion = 1;
 
 window.onload = function () {
     const DBOpenRequest = window.indexedDB.open("browsi-dash");
-    let db
 
     DBOpenRequest.onerror = (event) => {
         console.log("error: Error loading database.");
+
     };
 
     DBOpenRequest.onsuccess = async (event) => {
         console.log("success: Database loaded.");
-        db = DBOpenRequest.result;
 
     };
 

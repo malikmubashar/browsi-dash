@@ -98,7 +98,7 @@ export default function ShortcutForm({ action, close, _id }: { action: "add" | "
                         defaultValue={data.current.groupPart} />
                     <div
                         className="flex justify-center items-center relative">
-                        <AddHomeRounded className={"!scale-150 btn-icon !rounded-lg " + (data.current.home ? "!border-bd/30 bg-bd/20 text-bd" : "!border-cl/10 text-cl/70")} onClick={async () => await validateHandler({ target: { name: "home", value: !data.current.home } })} />
+                        <AddHomeRounded className={"!scale-150 btn-icon !rounded-lg " + (data.current.home ? "!border-bd/30 !bg-bd/20 text-bd" : "!border-cl/10 text-cl/70")} onClick={async () => await validateHandler({ target: { name: "home", value: !data.current.home } })} />
                     </div>
                 </div>
                 <div className="flex justify-end gap-x-2 mt-5">

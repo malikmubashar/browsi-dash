@@ -1,4 +1,3 @@
-"use client";
 import Landing from "@/components/landing";
 import Apps from "@/components/apps";
 

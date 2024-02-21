@@ -14,7 +14,7 @@ export const ShortcutSchema = z.object({
     isCheck: z.boolean().optional()
 }).transform(async (data) => {
     // if isChech field is true then generateIcon not runs
-    data.isCheck || (data['icon'] = await generateIcon(data.url));
+    data.isCheck || (data['icon'] = await generateIcon(data.name,data.url));
     delete data.isCheck;
     // removing home field if its value is other than true
     data.home !== true && (delete data.home);
