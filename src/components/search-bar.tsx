@@ -37,7 +37,7 @@ export default function SearchBar() {
                                 const txt = event.results[0][0].transcript;
                                 setSearch(txt);
                                 audio('speechSearchAffect')._play();
-                                setTimeout(() => form.current?.querySelector("input[type='submit']")?.click(), 500);
+                                setTimeout(() => (form.current?.querySelector("input[type='submit']") as any)?.click(), 500);
                                 recognition.stop();
                                 isSpeechStart.current = false;
                             }
