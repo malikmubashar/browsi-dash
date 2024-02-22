@@ -23,13 +23,12 @@ export default function ShortcutForm({ action, close, _id }: { action: "add" | "
                 setDisabled(["d", true]);
             }
         })();
-    }, []);
+    }, [action]);
 
     async function validateHandler(e: { target: { name: string, value: boolean } }) {
         let { name, value } = e.target;
         (data['current'] as any)[name] = value;
         const res = await ShortcutSchema.safeParseAsync({ ...data.current, isCheck: true });
-        console.log(res);
         res.success ? setDisabled(['d', false]) : setDisabled(['d', true]);
     }
 

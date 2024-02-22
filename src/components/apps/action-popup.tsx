@@ -23,7 +23,7 @@ export default function ActionPopup({ name = "", _id, elem, _for, cleanUp }: {
 
     useEffect(() => {
         (async () => ((db.current = await openDB('browsi-dash')) && _for === "app" && setShortcut(await db.current.get(table, _id))))();
-    }, []);
+    }, [_id]);
 
     return (
         <div className="bg-cl/10 backdrop-blur-xl rounded-xl text-cl/80 shadow w-36">

@@ -4,7 +4,6 @@ import "@/styles/globals.css";
 import StoreWrapper from "@/components/store";
 import { Toaster } from "react-hot-toast";
 import Dialogs from "@/components/dialog";
-import "@/idb";
 
 const inter = Inter({ subsets: ["latin"] });
 

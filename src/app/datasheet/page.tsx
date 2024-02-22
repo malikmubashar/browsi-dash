@@ -36,7 +36,7 @@ export default function Page() {
             <TableContainer className='mt-8'>
                 <Table size="small" aria-label="a dense table" className='[&_*]:text-cl/70'>
                     <TableHead>
-                        <TableRow className='*:font-bold *:text-nowrap hover:*:bg-cl/5'>
+                        <TableRow className='*:font-bold *:text-nowrap hover:*:bg-cl/5 *:!text-cl'>
                             <TableCell>Name</TableCell>
                             <TableCell align="center">Group</TableCell>
                             <TableCell align="center">Added To Home</TableCell>
@@ -59,7 +59,7 @@ export default function Page() {
                                     </div>
                                 </TableCell>
                                 <TableCell className='font-bold !text-cl/50 text-xs text-nowrap font-mono' align="center">{x.groupPart}</TableCell>
-                                <TableCell align="center" className='opacity-80'>{x.home ? <CheckCircleTwoToneIcon className='fill-bd ' /> : <span className='!text-cl/30'>--</span>}</TableCell>
+                                <TableCell align="center" className='opacity-80'>{x.home ? <CheckCircleTwoToneIcon className='!fill-bd ' /> : <span className='!text-cl/30'>--</span>}</TableCell>
                                 <TableCell
                                     align="right">
                                     <Tooltip arrow title={x.updatedAt ? "Modified Date" : "Created Date"}>

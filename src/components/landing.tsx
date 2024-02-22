@@ -9,5 +9,5 @@ export default function Landing() {
       <SearchBar />
       <ShortcutPanel />
     </section>
-  )
+  );
 }
