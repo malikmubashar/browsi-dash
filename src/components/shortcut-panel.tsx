@@ -11,7 +11,18 @@ export default function ShortcutPanel() {
   const updateScreen = useSelector(({ homeScreen }: AppState) => homeScreen);
   const [data, setDb] = useState<any>([]);
   async function loadData() {
-    setDb((await (await openDB('browsi-dash')).getAll('shortcuts')).filter(x => x.home));
+    setDb((await (await openDB('browsi-dash', 1, {
+      upgrade(db) {
+        const schema = db.createObjectStore('shortcuts', { keyPath: '_id' });
+        schema.createIndex("name", "name");
+        schema.createIndex("url", "url");
+        schema.createIndex("icon", "icon");
+        schema.createIndex("groupPart", "groupPart");
+        schema.createIndex("home", "home");
+        schema.createIndex("createdAt", "createdAt");
+        schema.createIndex("updatedAt", "updatedAt");
+      }
+    })).getAll('shortcuts')).filter(x => x.home));
   }
 
   useEffect(() => {
