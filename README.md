@@ -1,5 +1,6 @@
 # Home Page
 <img width="1726" alt="Screenshot 2024-02-21 at 6 52 24 AM" src="https://github.com/malikmubashar/browsi-dash/assets/117813579/45e7f4ae-60fc-4e99-b033-726138d70f25">
+<img width="1726" alt="Screenshot 2024-02-22 at 1 17 43 PM" src="https://github.com/malikmubashar/browsi-dash/assets/117813579/89332a6b-9f85-4b28-95cb-e470a30c6381">
 
 
 # Short Clip
