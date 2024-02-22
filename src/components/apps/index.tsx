@@ -55,6 +55,11 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
     const [popup, setPopup] = useState(false);
     const elem = useRef(null);
 
+    const eventCall = () => eventManager(elem.current, {
+        onClick: () => router.push(url),
+        onPress: () => setPopup(true)
+    });
+
 
     return (
         <>
@@ -78,17 +83,11 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
                         <div
                             id="box"
                             ref={elem}
-                            data-url={url}
                             className="size-[--box-size] rounded-[--box-round] transition-all ring-cl/5 hover:ring-4 pointer backdrop-blur-sm bg-py/50"
-                            onMouseDown={() => {
-                                eventManager(elem.current, {
-                                    onClick: () => router.push(url),
-                                    onPress: () => setPopup(true)
-                                });
-
-                            }}
+                            onTouchStart={eventCall}
+                            onMouseDown={eventCall}
                         >
-                            <img src={icon} alt={name} className="size-full rounded-[inherit] border border-cl/20 object-cover bg-cl/5 pointer-event-none" />
+                            <img src={icon} alt={name} className="size-full rounded-[inherit] border border-cl/20 object-cover bg-cl/5 pointer-events-none" />
                         </div>
                     </div>
                 </Popup>

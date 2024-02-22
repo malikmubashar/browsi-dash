@@ -94,10 +94,4 @@ input:-webkit-autofill {
 
     }
   }
-
-  .url-popup:hover::before {
-    @apply content-[attr(data-url)] fixed bottom-2 left-[50%] text-[10px] text-bd/60 px-3 py-1 bg-bd/5 rounded-xl backdrop-blur border border-bd/10 text-nowrap max-w-[97%] text-ellipsis overflow-hidden animate-bounceInUp;
-    translate: -50% 0;
-    animation-duration: 500ms;
-  }
 }

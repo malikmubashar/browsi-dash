@@ -21,6 +21,14 @@ export default function ShortcutPanel() {
         schema.createIndex("home", "home");
         schema.createIndex("createdAt", "createdAt");
         schema.createIndex("updatedAt", "updatedAt");
+        schema.add({
+          _id: 79087878666,
+          name: "Source",
+          url: "https://github.com/malikmubashar/browsi-dash/tree/main?tab=readme-ov-file",
+          icon: "https://github.githubassets.com/favicons/favicon.svg",
+          home: true,
+          createdAt: new Date().getTime(),
+        });
       }
     })).getAll('shortcuts')).filter(x => x.home));
   }
