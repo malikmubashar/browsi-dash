@@ -102,6 +102,10 @@ function Group({ name, obj, db, router }: { name: string, obj: Array<ShortcutTyp
     const [popup, setPopup] = useState(false);
     const elem = useRef(null);
     const newName = useRef("");
+    const eventCall = () => open || eventManager(elem.current, {
+        onClick: () => setOpen(true),
+        onPress: () => setPopup(true)
+    });
 
     return (
         <>
@@ -137,12 +141,8 @@ function Group({ name, obj, db, router }: { name: string, obj: Array<ShortcutTyp
                         <div
                             ref={elem}
                             className={"grid gap-2 bg-cl/5 backdrop-blur-sm grid-cols-3 grid-rows-3 [&>div>div]:p-0 border border-cl/10 " + (open ? "z-20 bg-py/50 w-[min(97vw,550px)] [&_#box]:size-[calc(3vw+45px)] gap-6 p-6 pb-8 justify-between rounded-[32px] scale-75 !cursor-default pointer-events-auto " : "size-[--box-size] p-2 rounded-[--box-round] [&_p]:hidden [&>div>div]:size-full *:pointer-events-none pointer *:rounded-md")}
-                            onMouseDown={(e: any) => {
-                                open || eventManager(elem.current, {
-                                    onClick: () => setOpen(true),
-                                    onPress: () => setPopup(true)
-                                });
-                            }}
+                            onMouseDown={eventCall}
+                            onTouchStart={eventCall}
                         >
                             {obj.map((x: ShortcutType, i: number) => open ? (<Box key={i} {...x} router={router} />) : (i < 9 && (<img key={i} src={x.icon} className="size-full" />)))}
                         </div>
