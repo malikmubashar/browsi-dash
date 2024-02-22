@@ -88,7 +88,7 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
 
                             }}
                         >
-                            <img src={icon} alt={name} className="size-full rounded-[inherit] border border-cl/20 object-cover bg-cl/5" />
+                            <img src={icon} alt={name} className="size-full rounded-[inherit] border border-cl/20 object-cover bg-cl/5 pointer-event-none" />
                         </div>
                     </div>
                 </Popup>
