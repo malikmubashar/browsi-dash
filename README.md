@@ -8,7 +8,10 @@ https://github.com/malikmubashar/browsi-dash/assets/117813579/63af478f-9c1b-427b
 
 
 # Data View
+In this page all apps detail appears and you can download the data in json format.
 <img width="1726" alt="Screenshot 2024-02-21 at 9 38 50 PM" src="https://github.com/malikmubashar/browsi-dash/assets/117813579/e26a402a-8ced-4a32-9e6b-565d5907f130">
 
 # Group View
+Apps can be grouped togather.
 <img width="1726" alt="Screenshot 2024-02-21 at 9 38 28 PM" src="https://github.com/malikmubashar/browsi-dash/assets/117813579/2e4732c2-0b1b-4ba1-a6b8-3885f98b49ba">
+

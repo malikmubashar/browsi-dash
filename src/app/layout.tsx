@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import StoreWrapper from "@/components/store";
-import Header from "@/components/header";
 import { Toaster } from "react-hot-toast";
 import Dialogs from "@/components/dialog";
 import "@/idb";
@@ -21,9 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <StoreWrapper>
-      <html lang="en">
+      <html lang="en" className="">
         <body className={inter.className}>
-          <Header />
           {children}
           <Toaster />
           <Dialogs />

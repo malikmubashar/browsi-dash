@@ -54,7 +54,7 @@ export default function ShortcutForm({ action, close, _id }: { action: "add" | "
     }
 
     return (
-        <div className="fixed inset-0 bg-cl/5 backdrop-blur-sm z-[9999] flex items-center justify-center">
+        <div className="fixed inset-0 bg-cl/5 backdrop-blur z-[9999] flex items-center justify-center">
             <form
                 className="p-5 z-50 bg-py rounded-2xl shadow shadow-cl/5 w-[min(500px,95%)] flex flex-col gap-y-4"
                 onSubmit={submitHandler}

@@ -59,7 +59,7 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
     return (
         <>
             {popup && (<div className={"fixed inset-0 z-10 " + (popup ? "" : "bg-cl/50 backdrop-blur")} onClick={(e: any) => { e.stopPropagation(); popup && setPopup(false) }}></div>)}
-            <div className="app-box flex flex-col items-center justify-start relative">
+            <div className="app-box flex flex-col items-center justify-start">
                 <Popup
                     open={popup}
                     title={<ActionPopup
@@ -68,7 +68,7 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
                         _id={_id}
                         elem={elem.current}
                         cleanUp={() => setPopup(false)} />}>
-                    <div className="">
+                    <div className="relative">
                         <input
                             type="checkbox"
                             name="select"
@@ -79,7 +79,7 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
                             id="box"
                             ref={elem}
                             data-url={url}
-                            className="size-[--box-size] rounded-[--box-round] transition-all ring-cl/5 hover:ring-4 pointer url-popup"
+                            className="size-[--box-size] rounded-[--box-round] transition-all ring-cl/5 hover:ring-4 pointer backdrop-blur-sm bg-py/50"
                             onMouseDown={() => {
                                 eventManager(elem.current, {
                                     onClick: () => router.push(url),
@@ -88,7 +88,7 @@ function Box({ name, icon, _id, url, router }: ShortcutType & { router: any }) {
 
                             }}
                         >
-                            <img src={icon} alt={name} className="size-full rounded-[inherit] border object-cover" />
+                            <img src={icon} alt={name} className="size-full rounded-[inherit] border border-cl/20 object-cover bg-cl/5" />
                         </div>
                     </div>
                 </Popup>
@@ -106,7 +106,7 @@ function Group({ name, obj, db, router }: { name: string, obj: Array<ShortcutTyp
 
     return (
         <>
-            {(open || popup) && (<div className={"fixed inset-0 z-10 pointer " + (popup ? "" : "bg-cl/5 backdrop-blur")} onClick={(e: any) => {
+            {(open || popup) && (<div className={"fixed inset-0 z-10 pointer " + (popup ? "" : "bg-cl/5 backdrop-blur-3xl")} onClick={(e: any) => {
                 e.stopPropagation();
                 open && setOpen(false);
                 popup && setPopup(false);
@@ -137,7 +137,7 @@ function Group({ name, obj, db, router }: { name: string, obj: Array<ShortcutTyp
                             className="absolute pointer -top-2 -left-2" />
                         <div
                             ref={elem}
-                            className={"grid gap-2 bg-cl/5 backdrop-blur-sm grid-cols-3 grid-rows-3 [&>div>div]:p-0 border border-cl/5 " + (open ? "z-20 bg-py/50 w-[min(97vw,550px)] [&_#box]:size-[calc(3vw+45px)] gap-6 p-6 pb-8 justify-between rounded-[32px] scale-75 !cursor-default pointer-events-auto " : "size-[--box-size] p-2 rounded-[--box-round] [&_p]:hidden [&>div>div]:size-full *:pointer-events-none pointer *:rounded-md")}
+                            className={"grid gap-2 bg-cl/5 backdrop-blur-sm grid-cols-3 grid-rows-3 [&>div>div]:p-0 border border-cl/10 " + (open ? "z-20 bg-py/50 w-[min(97vw,550px)] [&_#box]:size-[calc(3vw+45px)] gap-6 p-6 pb-8 justify-between rounded-[32px] scale-75 !cursor-default pointer-events-auto " : "size-[--box-size] p-2 rounded-[--box-round] [&_p]:hidden [&>div>div]:size-full *:pointer-events-none pointer *:rounded-md")}
                             onMouseDown={(e: any) => {
                                 open || eventManager(elem.current, {
                                     onClick: () => setOpen(true),

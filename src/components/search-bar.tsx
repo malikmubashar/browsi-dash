@@ -16,7 +16,7 @@ export default function SearchBar() {
     }
 
     return (
-        <form ref={form} className='w-[min(560px,95%)] -z-40' onSubmit={submit} onInput={(e: any) => setSearch(e.target.value)}>
+        <form ref={form} className='w-[min(576px,95%)] -z-40' onSubmit={submit} onInput={(e: any) => setSearch(e.target.value)}>
             <div className='rounded-3xl bg-py relative'>
                 <div className='py-0.5 px-4 flex items-center gap-x-1 border border-transparent rounded-[inherit]'>
                     <SearchOutlined className='scale-90 opacity-50' />

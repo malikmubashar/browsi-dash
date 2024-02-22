@@ -109,7 +109,7 @@ export default function Form({ children }: { children: React.ReactNode }) {
     return (
         <form
             ref={form}
-            className={"p-2 " + (isSelectionMode ? "[&_input[type='checkbox']]:block" : "[&_input[type='checkbox']]:hidden")}
+            className={"bg-py/80 rounded-t-3xl p-2 backdrop-blur-sm " + (isSelectionMode ? "[&_input[type='checkbox']]:block" : "[&_input[type='checkbox']]:hidden")}
             onSubmit={submitHandle}
             onChange={validationHandle}>
             {isSelectionMode && (

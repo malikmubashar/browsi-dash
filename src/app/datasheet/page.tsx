@@ -23,7 +23,7 @@ export default function Page() {
     }, []);
 
     return (
-        <main id='datasheet'>
+        <main id='datasheet' className='bg-py'>
             <div className='p-4 flex justify-end'>
                 <FileDownloadRoundedIcon className='btn-icon !rounded-md !scale-150' onClick={() => {
                     const elem = document.createElement('a');
